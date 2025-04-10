@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    fieldset {
+      padding: 10px;
+      border-radius: 10px;
+      width: 1280px;
+      height: auto;
+      border-color: #c0c0c0
+    }
+
+    legend h1 {
+      font-size: 1.5vw;
+      padding: 0 10px;
+    }
+
+    .row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .col {
+      width: 48%;
+    }
+
+    select,
+    label,
+    input {
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+      width: 100%;
+      gap: 5px;
+      background: none;
+      border: none;
+
+    }
+
+    input,
+    select {
+      border-bottom: 1px solid #c0c0c0;
+    }
+
+    label {
+      color: #444444
+    }
+
+    select::placeholder,
+    input::placeholder {
+      color: #8c8c8c
+    }
+
+    label.file {
+      padding: 10px;
+      border: 1px dashed #6f6f6f;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      background-color: #e3e3e3;
+      width: 50%;
+    }
+
+    label.file:hover {
+      border-color: aquamarine;
+      background-color: aliceblue;
+      cursor: pointer;
+    }
+
+    .radioField {
+      display: flex;
+    }
+
+    .radioField,
+    .radioField input {
+      width: 80%;
+    }
+
+    .radioField span {
+      width: 50%
+    }
+
+    .button button {
+      padding: 10px 20px;
+      background: #0076ce;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .fileupload {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    @media (max-width:600px) {
+      form {
+        display: block;
+        width: 100%;
+      }
+
+      .col {
+        width: 100%
+      }
+
+      select,
+      label,
+      input {
+        display: flex;
+      }
+
+      .fileupload {
+        flex-direction: column;
+      }
+
+      label.file {
+        width: 100%
+      }
+
+      legend h1 {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <section class="container">
+    <fieldset>
+      <legend>
+        <h1>Student Registration Form</h1>
+      </legend>
+
+      <div class="row">
+        <form action="/">
+          <div class="col">
+            <div class="form-group">
+              <label for="district">
+                <b>District</b>
+                <select id="district">
+                  <option value="">--Select--</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Chattagram">Chattagram</option>
+                  <option value="Sylhet">Sylhet</option>
+                  <option value="Cumilla">Cumilla</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="courses">
+                <b>Course</b>
+                <select id="courses">
+                  <option value="">--Select--</option>
+                  <option value="MERN">MERN</option>
+                  <option value="LAMP">LAMP</option>
+                  <option value="WAMP">WAMP</option>
+                  <option value="TUAMP">TUAMP</option>
+                  <option value="ZUAMP">ZUAMP</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="StudentName">
+                <b>Students Name*</b>
+                <input placeholder="Student name" type="text" name="Student name" id="StudentName" vlaue="" />
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="FatherName">
+                <b>Father Name*</b>
+                <input placeholder="Father Name" type="text" name="Father name" id="FatherName" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="MotherName">
+                <b>Mother Name*</b>
+                <input placeholder="Mother Name" type="text" name="Mother name" id="MotherName" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="DateofBirth">
+                <b>Date of Birth*</b>
+                <input placeholder="Date of Birth" type="date" name="Date of Birth" id="DateofBirth" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Gender">
+                <b>Gender*</b>
+                <div class="radioField"><span>Male</span><input type="radio" name="gender" id="Gender" vlaue="" /></div>
+                <div class="radioField"><span>Female</span><input type="radio" name="gender" id="Gender" vlaue="" />
+                </div>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="PhysicallyHandicapped">
+                <b>Physically Handicapped*</b>
+                <div class="radioField"><span>Yes</span><input type="radio" name="PhysicallyHandicapped"
+                    id="PhysicallyHandicapped" vlaue="" /></div>
+                <div class="radioField"><span>No</span><input type="radio" name="PhysicallyHandicapped"
+                    id="PhysicallyHandicapped" vlaue="" /></div>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Email">
+                <b>Email</b>
+                <input placeholder="Email" type="text" name="Email" id="Email" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Phone">
+                <b>Phone (Must be 11 Digits)*</b>
+                <input placeholder="Phone" type="text" name="Phone" id="Phone" vlaue="" />
+              </label>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="col">
+
+            <div class="form-group">
+              <label for="courses">
+                <b>Identification Type*</b>
+                <select id="IdentificationType">
+                  <option value="">--Select--</option>
+                  <option value="NID">NID</option>
+                  <option value="Passport">Passport</option>
+                  <option value="BirthCertificate">Birth Certificate</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="IdentificationNo">
+                <b>Identification No.*</b>
+
+                <input placeholder="Identification No" type="text" name="Identification No" id="IdentificationNo"
+                  vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="HomeDistrict">
+                <b>Home District*</b>
+                <select id="HomeDistrict">
+                  <option value="">--Select--</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Chattagram">Chattagram</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Upazila">
+                <b>Upazila*</b>
+                <select id="Upazila">
+                  <option value="">--Select--</option>
+                  <option value="Puthia">Puthia</option>
+                  <option value="Charghat">Charghat</option>
+                  <option value="Shilmaria">Shilmaria</option>
+                  <option value="Bilmaria">Bilmaria</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Upazila">
+                <b>Upazila*</b>
+                <select id="Upazila">
+                  <option value="">--Select--</option>
+                  <option value="Puthia">Puthia</option>
+                  <option value="Charghat">Charghat</option>
+                  <option value="Shilmaria">Shilmaria</option>
+                  <option value="Bilmaria">Bilmaria</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="village">
+                <b>Village/House No./Road No./Other Alternative*
+                </b>
+
+                <input placeholder="Village/House No./Road No./Other Alternative*" type="text" name="village"
+                  id="village" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="PostOffice">
+                <b>Post Office*</b>
+                <input placeholder="Post Office" type="text" name="PostOffice" id="PostOffice" vlaue="" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="Education">
+                <b>Educational Qualification*</b>
+                <select id="Education">
+                  <option value="">--Select--</option>
+                  <option value="MBA">MBA</option>
+                  <option value="BBA">BBA</option>
+                  <option value="HSC">HSC</option>
+                  <option value="SSC">SSC</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="haveanycomputer">
+                <b>Have any computer?*</b>
+                <div class="radioField"><span>Yes</span><input type="radio" name="haveanycomputer" id="haveanycomputer"
+                    vlaue="" /></div>
+                <div class="radioField"><span>No</span><input type="radio" name="haveanycomputer" id="haveanycomputer"
+                    vlaue="" /></div>
+              </label>
+            </div>
+
+            <div class="form-group fileupload">
+              <label for="photograph" class="file">
+                <b>Upload Photograph*</b>
+                <input type="file" name="photograph" id="photograph" vlaue="" class="hidden" />
+              </label>
+              <label for="signature" class="file">
+                <b>Upload Signature*</b>
+                <input type="file" name="signature" id="signature" vlaue="" class="hidden" />
+              </label>
+            </div>
+
+
+          </div>
+        </form>
+        <div class="form-group">
+          <div class="button">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+  </section>
+</body>
+
+</html>
